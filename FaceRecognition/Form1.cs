@@ -62,6 +62,17 @@ namespace FaceRecognition
 				currentFaceGray._EqualizeHist();
 
 				frame.Draw(facesDetected[i], new Bgr(Color.Red), 2);
+
+				if (recognizer.IsTrained)
+				{
+					var result = recognizer.Recognize(currentFaceGray);
+					frame.Draw(result.Name + ":" + result.Distance,
+						new Point(facesDetected[i].X - 2, facesDetected[i].Y - 2),
+						Emgu.CV.CvEnum.FontFace.HersheyComplex,
+						0.5d,
+						new Bgr(255, 0, 0)
+						);
+				}
 			}
 
 			pictureBox1.Image = frame.ToBitmap();

@@ -37,6 +37,9 @@
     <Reference Include="Emgu.CV">
       <HintPath>..\..\..\..\..\..\..\Emgu\emgucv-windows-universal 3.0.0.2032\bin\Emgu.CV.dll</HintPath>
     </Reference>
+    <Reference Include="Emgu.CV.Contrib">
+      <HintPath>..\..\..\..\..\..\..\Emgu\emgucv-windows-universal 3.0.0.2032\bin\Emgu.CV.Contrib.dll</HintPath>
+    </Reference>
     <Reference Include="Emgu.CV.UI">
       <HintPath>..\..\..\..\..\..\..\Emgu\emgucv-windows-universal 3.0.0.2032\bin\Emgu.CV.UI.dll</HintPath>
     </Reference>
