@@ -4,14 +4,13 @@ using System.Windows.Forms;
 
 using Emgu.CV;
 using Emgu.CV.Structure;
-using Emgu.Util;
 
 namespace FaceRecognition
 {
 	public partial class FormRecognizer : Form
 	{
 		private Capture capture = null;
-		private CascadeClassifier haar;
+		private CascadeClassifier haar = null;
 
 		private Image<Bgr, Byte> frame = null;
 		private Image<Gray, Byte> grayFrame = null;
@@ -20,9 +19,17 @@ namespace FaceRecognition
 
 		private Recognizer recognizer;
 
+		public static FormRecognizer Instance
+		{
+			get;
+			private set;
+		}
+
 		public FormRecognizer()
 		{
 			InitializeComponent();
+
+			Instance = this;
 
 			haar = new CascadeClassifier(@"haarcascade_frontalface_default.xml");
 
@@ -80,6 +87,10 @@ namespace FaceRecognition
 
 		private void ReleaseData()
 		{
+			if (Instance != null)
+			{
+				Instance = null;
+			}
 			if (capture != null)
 			{
 				StopCapture();

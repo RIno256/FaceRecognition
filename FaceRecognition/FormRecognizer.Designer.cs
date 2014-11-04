@@ -42,13 +42,13 @@
 			this.pictureBox1.TabIndex = 0;
 			this.pictureBox1.TabStop = false;
 			// 
-			// Form1
+			// FormRecognizer
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(694, 540);
+			this.ClientSize = new System.Drawing.Size(661, 505);
 			this.Controls.Add(this.pictureBox1);
-			this.Name = "Form1";
+			this.Name = "FormRecognizer";
 			this.Text = "Определение лиц";
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
