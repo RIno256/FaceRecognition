@@ -8,7 +8,7 @@ using Emgu.Util;
 
 namespace FaceRecognition
 {
-	public partial class Form1 : Form
+	public partial class FormRecognizer : Form
 	{
 		private Capture capture = null;
 		private CascadeClassifier haar;
@@ -20,7 +20,7 @@ namespace FaceRecognition
 
 		private Recognizer recognizer;
 
-		public Form1()
+		public FormRecognizer()
 		{
 			InitializeComponent();
 

@@ -1,6 +1,6 @@
 ﻿namespace FaceRecognition
 {
-	partial class Form1
+	partial class FormRecognizer
 	{
 		/// <summary>
 		/// Требуется переменная конструктора.
