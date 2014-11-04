@@ -158,8 +158,8 @@ namespace FaceRecognition
 				return false;
 			}
 
-			//try
-			//{
+			try
+			{
 				names.Clear();
 				faces.Clear();
 				List<int> tmp = new List<int>();
@@ -204,11 +204,11 @@ namespace FaceRecognition
 				recognizer.Train(faces.ToArray(), tmp.ToArray());
 
 				return true;
-			//}
-			//catch
-			//{
-			//    return false;
-			//}
+			}
+			catch
+			{
+			    return false;
+			}
 		}
 	}
 }
