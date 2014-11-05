@@ -43,6 +43,7 @@ namespace FaceRecognition
 	}
 	class Recognizer : IDisposable
 	{
+		public static readonly string TRAINED_FACES_PATH = Path.Combine(Application.StartupPath, "TrainedFaces\\");
 		private LBPHFaceRecognizer recognizer = null;
 
 		private List<Image<Gray, byte>> faces = new List<Image<Gray, byte>>();
@@ -50,7 +51,7 @@ namespace FaceRecognition
 
 		public Recognizer()
 		{
-			IsTrained = Train(Application.StartupPath + "\\TrainedFaces");
+			IsTrained = Train(TRAINED_FACES_PATH);
 		}
 
 		public bool IsTrained
@@ -84,7 +85,7 @@ namespace FaceRecognition
 
 		public bool Retrain()
 		{
-			return IsTrained = Train(Application.StartupPath + "\\TrainedFaces");
+			return IsTrained = Train(TRAINED_FACES_PATH);
 		}
 
 		public void Save(string filename)

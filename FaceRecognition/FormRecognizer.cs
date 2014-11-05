@@ -73,7 +73,7 @@ namespace FaceRecognition
 				if (recognizer.IsTrained)
 				{
 					var result = recognizer.Recognize(currentFaceGray);
-					frame.Draw(result.Name + ":" + result.Distance,
+					frame.Draw(result.Name + ":" + (int)result.Distance,
 						new Point(facesDetected[i].X - 2, facesDetected[i].Y - 2),
 						Emgu.CV.CvEnum.FontFace.HersheyComplex,
 						0.5d,
@@ -95,6 +95,14 @@ namespace FaceRecognition
 			{
 				StopCapture();
 			}
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			StopCapture();
+			FormTraining training = new FormTraining(haar);
+
+			training.ShowDialog();
 		}
 	}
 }
